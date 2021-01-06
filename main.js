@@ -1,0 +1,1 @@
+console.log("hello and welcome to the main.js file!");

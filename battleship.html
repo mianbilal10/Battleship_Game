@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,605 @@
     <link rel="stylesheet" href="main.css">
     <script src="main.js"></script>
 </head>
+
 <body>
-    <h1>Battleship</h1>
+    <header>
+        <h2>Battleship</h2>
+    </header>
+    <div class="container">
+        <div class="column" style="background-color:#aaa;">
+            <h3 style="color: #d62828;">Player1</h3>
+            <h4 id="sunk">Sunk 0</h4>
+            <h3 style="color: #003049;">SHOT GRID</h3>
+            <table>
+                <tr>
+                    <td></td>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>3</th>
+                    <th>4</th>
+                    <th>5</th>
+                    <th>6</th>
+                    <th>7</th>
+                    <th>8</th>
+                    <th>9</th>
+                    <th>10</th>
+                </tr>
+                <tr>
+                    <th>A</th>
+                    <td onclick="shot('A1')"><span id="A1"></span></td>
+                    <td onclick="shot('A2')"><span id="A2"></span></td>
+                    <td onclick="shot('A3')"><span id="A3"></span></td>
+                    <td onclick="shot('A4')"><span id="A4"></span></td>
+                    <td onclick="shot('A5')"><span id="A5"></span></td>
+                    <td onclick="shot('A6')"><span id="A6"></span></td>
+                    <td onclick="shot('A7')"><span id="A7"></span></td>
+                    <td onclick="shot('A8')"><span id="A8"></span></td>
+                    <td onclick="shot('A9')"><span id="A9"></span></td>
+                    <td onclick="shot('A10')"><span id="A10"></span></td>
+                </tr>
+                <tr>
+                    <th>B</th>
+                    <td onclick="shot('B1')"><span id="B1"></span></td>
+                    <td onclick="shot('B2')"><span id="B2"></span></td>
+                    <td onclick="shot('B3')"><span id="B3"></span></td>
+                    <td onclick="shot('B4')"><span id="B4"></span></td>
+                    <td onclick="shot('B5')"><span id="B5"></span></td>
+                    <td onclick="shot('B6')"><span id="B6"></span></td>
+                    <td onclick="shot('B7')"><span id="B7"></span></td>
+                    <td onclick="shot('B8')"><span id="B8"></span></td>
+                    <td onclick="shot('B9')"><span id="B9"></span></td>
+                    <td onclick="shot('B10')"><span id="B10"></span></td>
+                </tr>
+                <tr>
+                    <th>C</th>
+                    <td onclick="shot('C1')"><span id="C1"></span></td>
+                    <td onclick="shot('C2')"><span id="C2"></span></td>
+                    <td onclick="shot('C3')"><span id="C3"></span></td>
+                    <td onclick="shot('C4')"><span id="C4"></span></td>
+                    <td onclick="shot('C5')"><span id="C5"></span></td>
+                    <td onclick="shot('C6')"><span id="C6"></span></td>
+                    <td onclick="shot('C7')"><span id="C7"></span></td>
+                    <td onclick="shot('C8')"><span id="C8"></span></td>
+                    <td onclick="shot('C9')"><span id="C9"></span></td>
+                    <td onclick="shot('C10')"><span id="C10"></span></td>
+                </tr>
+                <tr>
+                    <th>D</th>
+                    <td onclick="shot('D1')"><span id="D1"></span></td>
+                    <td onclick="shot('D2')"><span id="D2"></span></td>
+                    <td onclick="shot('D3')"><span id="D3"></span></td>
+                    <td onclick="shot('D4')"><span id="D4"></span></td>
+                    <td onclick="shot('D5')"><span id="D5"></span></td>
+                    <td onclick="shot('D6')"><span id="D6"></span></td>
+                    <td onclick="shot('D7')"><span id="D7"></span></td>
+                    <td onclick="shot('D8')"><span id="D8"></span></td>
+                    <td onclick="shot('D9')"><span id="D9"></span></td>
+                    <td onclick="shot('D10')"><span id="D10"></span></td>
+                </tr>
+                <tr>
+                    <th>E</th>
+                    <td onclick="shot('E1')"><span id="E1"></span></td>
+                    <td onclick="shot('E2')"><span id="E2"></span></td>
+                    <td onclick="shot('E3')"><span id="E3"></span></td>
+                    <td onclick="shot('E4')"><span id="E4"></span></td>
+                    <td onclick="shot('E5')"><span id="E5"></span></td>
+                    <td onclick="shot('E6')"><span id="E6"></span></td>
+                    <td onclick="shot('E7')"><span id="E7"></span></td>
+                    <td onclick="shot('E8')"><span id="E8"></span></td>
+                    <td onclick="shot('E9')"><span id="E9"></span></td>
+                    <td onclick="shot('E10')"><span id="E10"></span></td>
+                </tr>
+                <tr>
+                    <th>F</th>
+                    <td onclick="shot('F1')"><span id="F1"></span></td>
+                    <td onclick="shot('F2')"><span id="F2"></span></td>
+                    <td onclick="shot('F3')"><span id="F3"></span></td>
+                    <td onclick="shot('F4')"><span id="F4"></span></td>
+                    <td onclick="shot('F5')"><span id="F5"></span></td>
+                    <td onclick="shot('F6')"><span id="F6"></span></td>
+                    <td onclick="shot('F7')"><span id="F7"></span></td>
+                    <td onclick="shot('F8')"><span id="F8"></span></td>
+                    <td onclick="shot('F9')"><span id="F9"></span></td>
+                    <td onclick="shot('F10')"><span id="F10"></span></td>
+                </tr>
+                <tr>
+                    <th>G</th>
+                    <td onclick="shot('G1')"><span id="G1"></span></td>
+                    <td onclick="shot('G2')"><span id="G2"></span></td>
+                    <td onclick="shot('G3')"><span id="G3"></span></td>
+                    <td onclick="shot('G4')"><span id="G4"></span></td>
+                    <td onclick="shot('G5')"><span id="G5"></span></td>
+                    <td onclick="shot('G6')"><span id="G6"></span></td>
+                    <td onclick="shot('G7')"><span id="G7"></span></td>
+                    <td onclick="shot('G8')"><span id="G8"></span></td>
+                    <td onclick="shot('G9')"><span id="G9"></span></td>
+                    <td onclick="shot('G10')"><span id="G10"></span></td>
+                </tr>
+                <tr>
+                    <th>H</th>
+                    <td onclick="shot('H1')"><span id="H1"></span></td>
+                    <td onclick="shot('H2')"><span id="H2"></span></td>
+                    <td onclick="shot('H3')"><span id="H3"></span></td>
+                    <td onclick="shot('H4')"><span id="H4"></span></td>
+                    <td onclick="shot('H5')"><span id="H5"></span></td>
+                    <td onclick="shot('H6')"><span id="H6"></span></td>
+                    <td onclick="shot('H7')"><span id="H7"></span></td>
+                    <td onclick="shot('H8')"><span id="H8"></span></td>
+                    <td onclick="shot('H9')"><span id="H9"></span></td>
+                    <td onclick="shot('H10')"><span id="H10"></span></td>
+                </tr>
+                <tr>
+                    <th>I</th>
+                    <td onclick="shot('I1')"><span id="I1"></span></td>
+                    <td onclick="shot('I2')"><span id="I2"></span></td>
+                    <td onclick="shot('I3')"><span id="I3"></span></td>
+                    <td onclick="shot('I4')"><span id="I4"></span></td>
+                    <td onclick="shot('I5')"><span id="I5"></span></td>
+                    <td onclick="shot('I6')"><span id="I6"></span></td>
+                    <td onclick="shot('I7')"><span id="I7"></span></td>
+                    <td onclick="shot('I8')"><span id="I8"></span></td>
+                    <td onclick="shot('I9')"><span id="I9"></span></td>
+                    <td onclick="shot('I10')"><span id="I10"></span></td>
+                </tr>
+                <tr>
+                    <th>J</th>
+                    <td onclick="shot('J1')"><span id="J1"></span></td>
+                    <td onclick="shot('J2')"><span id="J2"></span></td>
+                    <td onclick="shot('J3')"><span id="J3"></span></td>
+                    <td onclick="shot('J4')"><span id="J4"></span></td>
+                    <td onclick="shot('J5')"><span id="J5"></span></td>
+                    <td onclick="shot('J6')"><span id="J6"></span></td>
+                    <td onclick="shot('J7')"><span id="J7"></span></td>
+                    <td onclick="shot('J8')"><span id="J8"></span></td>
+                    <td onclick="shot('J9')"><span id="J9"></span></td>
+                    <td onclick="shot('J10')"><span id="J10"></span></td>
+                </tr>
+            </table>
+            <h3 style="color: #003049;">SHIP GRID</h3>
+            <table>
+                <tr>
+                    <td></td>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>3</th>
+                    <th>4</th>
+                    <th>5</th>
+                    <th>6</th>
+                    <th>7</th>
+                    <th>8</th>
+                    <th>9</th>
+                    <th>10</th>
+                </tr>
+                <tr>
+                    <th>A</th>
+                    <td onclick=""><span id="SA1"></span></td>
+                    <td onclick=""><span id="SA2"></span></td>
+                    <td onclick=""><span id="SA3"></span></td>
+                    <td onclick=""><span id="SA4"></span></td>
+                    <td onclick=""><span id="SA5"></span></td>
+                    <td onclick=""><span id="SA6"></span></td>
+                    <td onclick=""><span id="SA7"></span></td>
+                    <td onclick=""><span id="SA8"></span></td>
+                    <td onclick=""><span id="SA9"></span></td>
+                    <td onclick=""><span id="SA10"></span></td>
+                </tr>
+                <tr>
+                    <th>B</th>
+                    <td onclick=""><span id="SB1"></span></td>
+                    <td onclick=""><span id="SB2"></span></td>
+                    <td onclick=""><span id="SB3"></span></td>
+                    <td onclick=""><span id="SB4"></span></td>
+                    <td onclick=""><span id="SB5"></span></td>
+                    <td onclick=""><span id="SB6"></span></td>
+                    <td onclick=""><span id="SB7"></span></td>
+                    <td onclick=""><span id="SB8"></span></td>
+                    <td onclick=""><span id="SB9"></span></td>
+                    <td onclick=""><span id="SB10"></span></td>
+                </tr>
+                <tr>
+                    <th>C</th>
+                    <td onclick=""><span id="SC1"></span></td>
+                    <td onclick=""><span id="SC2"></span></td>
+                    <td onclick=""><span id="SC3"></span></td>
+                    <td onclick=""><span id="SC4"></span></td>
+                    <td onclick=""><span id="SC5"></span></td>
+                    <td onclick=""><span id="SC6"></span></td>
+                    <td onclick=""><span id="SC7"></span></td>
+                    <td onclick=""><span id="SC8"></span></td>
+                    <td onclick=""><span id="SC9"></span></td>
+                    <td onclick=""><span id="SC10"></span></td>
+                </tr>
+                <tr>
+                    <th>D</th>
+                    <td onclick=""><span id="SD1"></span></td>
+                    <td onclick=""><span id="SD2"></span></td>
+                    <td onclick=""><span id="SD3"></span></td>
+                    <td onclick=""><span id="SD4"></span></td>
+                    <td onclick=""><span id="SD5"></span></td>
+                    <td onclick=""><span id="SD6"></span></td>
+                    <td onclick=""><span id="SD7"></span></td>
+                    <td onclick=""><span id="SD8"></span></td>
+                    <td onclick=""><span id="SD9"></span></td>
+                    <td onclick=""><span id="SD10"></span></td>
+                </tr>
+                <tr>
+                    <th>E</th>
+                    <td onclick=""><span id="SE1"></span></td>
+                    <td onclick=""><span id="SE2"></span></td>
+                    <td onclick=""><span id="SE3"></span></td>
+                    <td onclick=""><span id="SE4"></span></td>
+                    <td onclick=""><span id="SE5"></span></td>
+                    <td onclick=""><span id="SE6"></span></td>
+                    <td onclick=""><span id="SE7"></span></td>
+                    <td onclick=""><span id="SE8"></span></td>
+                    <td onclick=""><span id="SE9"></span></td>
+                    <td onclick=""><span id="SE10"></span></td>
+                </tr>
+                <tr>
+                    <th>F</th>
+                    <td onclick=""><span id="SF1"></span></td>
+                    <td onclick=""><span id="SF2"></span></td>
+                    <td onclick=""><span id="SF3"></span></td>
+                    <td onclick=""><span id="SF4"></span></td>
+                    <td onclick=""><span id="SF5"></span></td>
+                    <td onclick=""><span id="SF6"></span></td>
+                    <td onclick=""><span id="SF7"></span></td>
+                    <td onclick=""><span id="SF8"></span></td>
+                    <td onclick=""><span id="SF9"></span></td>
+                    <td onclick=""><span id="SF10"></span></td>
+                </tr>
+                <tr>
+                    <th>G</th>
+                    <td onclick=""><span id="SG1"></span></td>
+                    <td onclick=""><span id="SG2"></span></td>
+                    <td onclick=""><span id="SG3"></span></td>
+                    <td onclick=""><span id="SG4"></span></td>
+                    <td onclick=""><span id="SG5"></span></td>
+                    <td onclick=""><span id="SG6"></span></td>
+                    <td onclick=""><span id="SG7"></span></td>
+                    <td onclick=""><span id="SG8"></span></td>
+                    <td onclick=""><span id="SG9"></span></td>
+                    <td onclick=""><span id="SG10"></span></td>
+                </tr>
+                <tr>
+                    <th>H</th>
+                    <td onclick=""><span id="SH1"></span></td>
+                    <td onclick=""><span id="SH2"></span></td>
+                    <td onclick=""><span id="SH3"></span></td>
+                    <td onclick=""><span id="SH4"></span></td>
+                    <td onclick=""><span id="SH5"></span></td>
+                    <td onclick=""><span id="SH6"></span></td>
+                    <td onclick=""><span id="SH7"></span></td>
+                    <td onclick=""><span id="SH8"></span></td>
+                    <td onclick=""><span id="SH9"></span></td>
+                    <td onclick=""><span id="SH10"></span></td>
+                </tr>
+                <tr>
+                    <th>I</th>
+                    <td onclick=""><span id="SI1"></span></td>
+                    <td onclick=""><span id="SI2"></span></td>
+                    <td onclick=""><span id="SI3"></span></td>
+                    <td onclick=""><span id="SI4"></span></td>
+                    <td onclick=""><span id="SI5"></span></td>
+                    <td onclick=""><span id="SI6"></span></td>
+                    <td onclick=""><span id="SI7"></span></td>
+                    <td onclick=""><span id="SI8"></span></td>
+                    <td onclick=""><span id="SI9"></span></td>
+                    <td onclick=""><span id="SI10"></span></td>
+                </tr>
+                <tr>
+                    <th>J</th>
+                    <td onclick=""><span id="SJ1"></span></td>
+                    <td onclick=""><span id="SJ2"></span></td>
+                    <td onclick=""><span id="SJ3"></span></td>
+                    <td onclick=""><span id="SJ4"></span></td>
+                    <td onclick=""><span id="SJ5"></span></td>
+                    <td onclick=""><span id="SJ6"></span></td>
+                    <td onclick=""><span id="SJ7"></span></td>
+                    <td onclick=""><span id="SJ8"></span></td>
+                    <td onclick=""><span id="SJ9"></span></td>
+                    <td onclick=""><span id="SJ10"></span></td>
+                </tr>
+            </table>
+        </div>
+        <div class="column" style="background-color:#bbb;">
+            <h3 style="color: #d62828;">Player2</h3>
+            <h4 id="p-sunk">Sunk 0</h4>
+            <h3 style="color: #003049;">SHOT GRID</h3>
+            <table>
+                <tr>
+                    <td></td>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>3</th>
+                    <th>4</th>
+                    <th>5</th>
+                    <th>6</th>
+                    <th>7</th>
+                    <th>8</th>
+                    <th>9</th>
+                    <th>10</th>
+                </tr>
+                <tr>
+                    <th>A</th>
+                    <td><span id="PA1"></span></td>
+                    <td><span id="PA2"></span></td>
+                    <td><span id="PA3"></span></td>
+                    <td><span id="PA4"></span></td>
+                    <td><span id="PA5"></span></td>
+                    <td><span id="PA6"></span></td>
+                    <td><span id="PA7"></span></td>
+                    <td><span id="PA8"></span></td>
+                    <td><span id="PA9"></span></td>
+                    <td><span id="PA10"></span></td>
+                </tr>
+                <tr>
+                    <th>B</th>
+                    <td><span id="PB1"></span></td>
+                    <td><span id="PB2"></span></td>
+                    <td><span id="PB3"></span></td>
+                    <td><span id="PB4"></span></td>
+                    <td><span id="PB5"></span></td>
+                    <td><span id="PB6"></span></td>
+                    <td><span id="PB7"></span></td>
+                    <td><span id="PB8"></span></td>
+                    <td><span id="PB9"></span></td>
+                    <td><span id="PB10"></span></td>
+                </tr>
+                <tr>
+                    <th>C</th>
+                    <td><span id="PC1"></span></td>
+                    <td><span id="PC2"></span></td>
+                    <td><span id="PC3"></span></td>
+                    <td><span id="PC4"></span></td>
+                    <td><span id="PC5"></span></td>
+                    <td><span id="PC6"></span></td>
+                    <td><span id="PC7"></span></td>
+                    <td><span id="PC8"></span></td>
+                    <td><span id="PC9"></span></td>
+                    <td><span id="PC10"></span></td>
+                </tr>
+                <tr>
+                    <th>D</th>
+                    <td><span id="PD1"></span></td>
+                    <td><span id="PD2"></span></td>
+                    <td><span id="PD3"></span></td>
+                    <td><span id="PD4"></span></td>
+                    <td><span id="PD5"></span></td>
+                    <td><span id="PD6"></span></td>
+                    <td><span id="PD7"></span></td>
+                    <td><span id="PD8"></span></td>
+                    <td><span id="PD9"></span></td>
+                    <td><span id="PD10"></span></td>
+                </tr>
+                <tr>
+                    <th>E</th>
+                    <td><span id="PE1"></span></td>
+                    <td><span id="PE2"></span></td>
+                    <td><span id="PE3"></span></td>
+                    <td><span id="PE4"></span></td>
+                    <td><span id="PE5"></span></td>
+                    <td><span id="PE6"></span></td>
+                    <td><span id="PE7"></span></td>
+                    <td><span id="PE8"></span></td>
+                    <td><span id="PE9"></span></td>
+                    <td><span id="PE10"></span></td>
+                </tr>
+                <tr>
+                    <th>F</th>
+                    <td><span id="PF1"></span></td>
+                    <td><span id="PF2"></span></td>
+                    <td><span id="PF3"></span></td>
+                    <td><span id="PF4"></span></td>
+                    <td><span id="PF5"></span></td>
+                    <td><span id="PF6"></span></td>
+                    <td><span id="PF7"></span></td>
+                    <td><span id="PF8"></span></td>
+                    <td><span id="PF9"></span></td>
+                    <td><span id="PF10"></span></td>
+                </tr>
+                <tr>
+                    <th>G</th>
+                    <td><span id="PG1"></span></td>
+                    <td><span id="PG2"></span></td>
+                    <td><span id="PG3"></span></td>
+                    <td><span id="PG4"></span></td>
+                    <td><span id="PG5"></span></td>
+                    <td><span id="PG6"></span></td>
+                    <td><span id="PG7"></span></td>
+                    <td><span id="PG8"></span></td>
+                    <td><span id="PG9"></span></td>
+                    <td><span id="PG10"></span></td>
+                </tr>
+                <tr>
+                    <th>H</th>
+                    <td><span id="PH1"></span></td>
+                    <td><span id="PH2"></span></td>
+                    <td><span id="PH3"></span></td>
+                    <td><span id="PH4"></span></td>
+                    <td><span id="PH5"></span></td>
+                    <td><span id="PH6"></span></td>
+                    <td><span id="PH7"></span></td>
+                    <td><span id="PH8"></span></td>
+                    <td><span id="PH9"></span></td>
+                    <td><span id="PH10"></span></td>
+                </tr>
+                <tr>
+                    <th>I</th>
+                    <td><span id="PI1"></span></td>
+                    <td><span id="PI2"></span></td>
+                    <td><span id="PI3"></span></td>
+                    <td><span id="PI4"></span></td>
+                    <td><span id="PI5"></span></td>
+                    <td><span id="PI6"></span></td>
+                    <td><span id="PI7"></span></td>
+                    <td><span id="PI8"></span></td>
+                    <td><span id="PI9"></span></td>
+                    <td><span id="PI10"></span></td>
+                </tr>
+                <tr>
+                    <th>J</th>
+                    <td><span id="PJ1"></span></td>
+                    <td><span id="PJ2"></span></td>
+                    <td><span id="PJ3"></span></td>
+                    <td><span id="PJ4"></span></td>
+                    <td><span id="PJ5"></span></td>
+                    <td><span id="PJ6"></span></td>
+                    <td><span id="PJ7"></span></td>
+                    <td><span id="PJ8"></span></td>
+                    <td><span id="PJ9"></span></td>
+                    <td><span id="PJ10"></span></td>
+                </tr>
+            </table>
+            <h3 style="color: #003049;">SHIP GRID</h3>
+            <table>
+                <tr>
+                    <td></td>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>3</th>
+                    <th>4</th>
+                    <th>5</th>
+                    <th>6</th>
+                    <th>7</th>
+                    <th>8</th>
+                    <th>9</th>
+                    <th>10</th>
+                </tr>
+                <tr>
+                    <th>A</th>
+                    <td><span id="PSA1"></span></td>
+                    <td><span id="PSA2"></span></td>
+                    <td><span id="PSA3"></span></td>
+                    <td><span id="PSA4"></span></td>
+                    <td><span id="PSA5"></span></td>
+                    <td><span id="PSA6"></span></td>
+                    <td><span id="PSA7"></span></td>
+                    <td><span id="PSA8"></span></td>
+                    <td><span id="PSA9"></span></td>
+                    <td><span id="PSA10"></span></td>
+                </tr>
+                <tr>
+                    <th>B</th>
+                    <td><span id="PSB1"></span></td>
+                    <td><span id="PSB2"></span></td>
+                    <td><span id="PSB3"></span></td>
+                    <td><span id="PSB4"></span></td>
+                    <td><span id="PSB5"></span></td>
+                    <td><span id="PSB6"></span></td>
+                    <td><span id="PSB7"></span></td>
+                    <td><span id="PSB8"></span></td>
+                    <td><span id="PSB9"></span></td>
+                    <td><span id="PSB10"></span></td>
+                </tr>
+                <tr>
+                    <th>C</th>
+                    <td><span id="PSC1"></span></td>
+                    <td><span id="PSC2"></span></td>
+                    <td><span id="PSC3"></span></td>
+                    <td><span id="PSC4"></span></td>
+                    <td><span id="PSC5"></span></td>
+                    <td><span id="PSC6"></span></td>
+                    <td><span id="PSC7"></span></td>
+                    <td><span id="PSC8"></span></td>
+                    <td><span id="PSC9"></span></td>
+                    <td><span id="PSC10"></span></td>
+                </tr>
+                <tr>
+                    <th>D</th>
+                    <td><span id="PSD1"></span></td>
+                    <td><span id="PSD2"></span></td>
+                    <td><span id="PSD3"></span></td>
+                    <td><span id="PSD4"></span></td>
+                    <td><span id="PSD5"></span></td>
+                    <td><span id="PSD6"></span></td>
+                    <td><span id="PSD7"></span></td>
+                    <td><span id="PSD8"></span></td>
+                    <td><span id="PSD9"></span></td>
+                    <td><span id="PSD10"></span></td>
+                </tr>
+                <tr>
+                    <th>E</th>
+                    <td><span id="PSE1"></span></td>
+                    <td><span id="PSE2"></span></td>
+                    <td><span id="PSE3"></span></td>
+                    <td><span id="PSE4"></span></td>
+                    <td><span id="PSE5"></span></td>
+                    <td><span id="PSE6"></span></td>
+                    <td><span id="PSE7"></span></td>
+                    <td><span id="PSE8"></span></td>
+                    <td><span id="PSE9"></span></td>
+                    <td><span id="PSE10"></span></td>
+                </tr>
+                <tr>
+                    <th>F</th>
+                    <td><span id="PSF1"></span></td>
+                    <td><span id="PSF2"></span></td>
+                    <td><span id="PSF3"></span></td>
+                    <td><span id="PSF4"></span></td>
+                    <td><span id="PSF5"></span></td>
+                    <td><span id="PSF6"></span></td>
+                    <td><span id="PSF7"></span></td>
+                    <td><span id="PSF8"></span></td>
+                    <td><span id="PSF9"></span></td>
+                    <td><span id="PSF10"></span></td>
+                </tr>
+                <tr>
+                    <th>G</th>
+                    <td><span id="PSG1"></span></td>
+                    <td><span id="PSG2"></span></td>
+                    <td><span id="PSG3"></span></td>
+                    <td><span id="PSG4"></span></td>
+                    <td><span id="PSG5"></span></td>
+                    <td><span id="PSG6"></span></td>
+                    <td><span id="PSG7"></span></td>
+                    <td><span id="PSG8"></span></td>
+                    <td><span id="PSG9"></span></td>
+                    <td><span id="PSG10"></span></td>
+                </tr>
+                <tr>
+                    <th>H</th>
+                    <td><span id="PSH1"></span></td>
+                    <td><span id="PSH2"></span></td>
+                    <td><span id="PSH3"></span></td>
+                    <td><span id="PSH4"></span></td>
+                    <td><span id="PSH5"></span></td>
+                    <td><span id="PSH6"></span></td>
+                    <td><span id="PSH7"></span></td>
+                    <td><span id="PSH8"></span></td>
+                    <td><span id="PSH9"></span></td>
+                    <td><span id="PSH10"></span></td>
+                </tr>
+                <tr>
+                    <th>I</th>
+                    <td><span id="PSI1"></span></td>
+                    <td><span id="PSI2"></span></td>
+                    <td><span id="PSI3"></span></td>
+                    <td><span id="PSI4"></span></td>
+                    <td><span id="PSI5"></span></td>
+                    <td><span id="PSI6"></span></td>
+                    <td><span id="PSI7"></span></td>
+                    <td><span id="PSI8"></span></td>
+                    <td><span id="PSI9"></span></td>
+                    <td><span id="PSI10"></span></td>
+                </tr>
+                <tr>
+                    <th>J</th>
+                    <td><span id="PSJ1"></span></td>
+                    <td><span id="PSJ2"></span></td>
+                    <td><span id="PSJ3"></span></td>
+                    <td><span id="PSJ4"></span></td>
+                    <td><span id="PSJ5"></span></td>
+                    <td><span id="PSJ6"></span></td>
+                    <td><span id="PSJ7"></span></td>
+                    <td><span id="PSJ8"></span></td>
+                    <td><span id="PSJ9"></span></td>
+                    <td><span id="PSJ10"></span></td>
+                </tr>
+            </table>
+        </div>
+    </div>
 </body>
+
 </html>
